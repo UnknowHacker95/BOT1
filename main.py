@@ -27,7 +27,7 @@ def start_message(message):
 2 2
 А также у нас есть 3 стакана, в которые шарики падают.
 Вы должны угадать сколько будет шариков в каждом стакане)
-4. По очереди вводите количество шариков в каждом стакане. Прошу вводить в разных строках.
+4. По очереди вводите количество шариков в каждом стакане.
 5. Ждите отработки модели
 6. Вам будет отправлен результат.
 *Правильне ответы*
@@ -44,9 +44,10 @@ def start_message(message):
 @bot.message_handler(content_types=['text'])
 def start(message):
     try:
-        a = int(message.text)
-        b = int(message.text)
-        c = int(message.text)
+        st = message.text.split(' ')
+        a = int(st[0])
+        b = int(st[1])
+        c = int(st[2])
         a1 = count / 4
         c1 = a1
         b1 = count / 4 * 2
